@@ -1,17 +1,22 @@
 <template>
   <div>
-
+    <h2>Lunber</h2>
+    <p>{{msg}}</p>
   </div>
 </template>
 <script>
   export default {
+    data:function () {
+      return{
+        title:'主页'
+      }
+    },
+    props:['msg'],
     route: {
+
       activate: function (transition) {
-        console.log('hook-example activated!')
-        transition.next()
-      },
-      deactivate: function (transition) {
-        console.log('hook-example deactivated!')
+        this.$emit('title',this.title)
+        console.log('Home activated!')
         transition.next()
       }
     }

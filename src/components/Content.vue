@@ -1,19 +1,23 @@
 <template>
   <div>
     <p>
-      海贼王
+      {{msg}}
     </p>
   </div>
 </template>
 <script>
   export default {
+    data:function(){
+      return{
+        msg:'test',
+        title:'海贼王'
+      }
+    },
+    ready:function () {
+    },
     route: {
       activate: function (transition) {
-        console.log('hook-example activated!')
-        transition.next()
-      },
-      deactivate: function (transition) {
-        console.log('hook-example deactivated!')
+        this.$emit('title',this.title)
         transition.next()
       }
     }
