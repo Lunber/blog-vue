@@ -17,10 +17,69 @@
             date:'2016-08-29',
             href:"{ path:'/content'}"
           },
+          {title:'test page 1',
+            date:'2016-08-29',
+            href:"{ path:'/content'}"
+          },
+          {title:'test page 1',
+            date:'2016-08-29',
+            href:"{ path:'/content'}"
+          },
+          {title:'test page 1',
+            date:'2016-08-29',
+            href:"{ path:'/content'}"
+          },
+          {title:'test page 1',
+            date:'2016-08-29',
+            href:"{ path:'/content'}"
+          },
+          {title:'test page 1',
+            date:'2016-08-29',
+            href:"{ path:'/content'}"
+          },
+          {title:'test page 1',
+            date:'2016-08-29',
+            href:"{ path:'/content'}"
+          },
+          {title:'test page 1',
+            date:'2016-08-29',
+            href:"{ path:'/content'}"
+          },
+          {title:'test page 1',
+            date:'2016-08-29',
+            href:"{ path:'/content'}"
+          },
+          {title:'test page 1',
+            date:'2016-08-29',
+            href:"{ path:'/content'}"
+          },
+          {title:'test page 1',
+            date:'2016-08-29',
+            href:"{ path:'/content'}"
+          },
+          {title:'test page 1',
+            date:'2016-08-29',
+            href:"{ path:'/content'}"
+          },
+          {title:'test page 1',
+            date:'2016-08-29',
+            href:"{ path:'/content'}"
+          },
+          {title:'test page 1',
+            date:'2016-08-29',
+            href:"{ path:'/content'}"
+          },
+          {title:'test page 1',
+            date:'2016-08-29',
+            href:"{ path:'/content'}"
+          },
+          {title:'test page 1',
+            date:'2016-08-29',
+            href:"{ path:'/content'}"
+          },
           {title:'test page 2',
             date:'2016-08-29',
             href:"{ path:'/content'}"
-
           }
         ]
       }
@@ -45,7 +104,7 @@
     width: 100%;
     border-bottom: 1px solid #cccccc;
     text-decoration: none;
-    color: #000000;
+    color: #ffffff;
   }
   .blog h1{
 
