@@ -11,7 +11,7 @@ Vue.use(VueResource)
 Vue.use(VueRouter)
 
 const router = new VueRouter();
-const port = "http://localhost:8000"
+const port = "http://localhost:8888"
 
 //路由map
 

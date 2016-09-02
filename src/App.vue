@@ -199,7 +199,7 @@
       titleMsg: function (msg) {
         this.title = msg
       },
-      handleScroll () {
+      handleScroll:function () {
         var t = document.documentElement.scrollTop || document.body.scrollTop;
         t > 80 ? this.scrollTop = true : this.scrollTop = false;
       }

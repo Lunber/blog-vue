@@ -14,14 +14,15 @@
     },
     props: ['msg'],
     route: {
-      activate: function (transition) {
-        this.$emit('title', this.title)
-        this.$http.get(this.$route.port + "/api").then(function (resp) {
-          console.log(resp.data)
-        })
-        console.log('Home activated!')
-        transition.next()
-      }
+    },
+    activate: function (transition) {
+      this.$emit('title', this.title)
+      this.$http.get(this.$route.port + "/api/test").then(function (resp) {
+        console.log(resp.data)
+        console.log(resp.data.msg)
+      })
+      console.log('Home activated!')
+      transition.next()
     }
   }
 </script>
