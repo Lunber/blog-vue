@@ -24,6 +24,7 @@
     },
     ready:function () {
       console.log(marked('I am using __markdown__.'));
+      console.log(window.location)
     },
     filters: {
       marked: marked

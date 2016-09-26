@@ -23,7 +23,8 @@ router.map({
   },
   '/blog':{
     component : Blog,
-    title : '博客'
+    title : '博客',
+    port : port
   },
   '/contect':{
     component : Home
