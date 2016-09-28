@@ -194,6 +194,7 @@
     },
     ready: function () {
       window.addEventListener('scroll', this.handleScroll);
+      console.log(1)
     },
     methods: {
       titleMsg: function (msg) {

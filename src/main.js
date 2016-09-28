@@ -31,7 +31,8 @@ router.map({
   },
   '/content':{
     component : Content,
-    title : ''
+    title : '',
+    port : port
   }
 })
 

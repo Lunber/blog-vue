@@ -30,13 +30,13 @@
     },
     methods:{
       pageRouteGo:function (index) {
-        console.log(index)
+//        console.log(index)
         var target = event.currentTarget
         var id = target.dataset.id
-        console.log(id)
+//        console.log(id)
         this.$route.router.go({
           path:'/content',
-          query:{id}
+          query:{id:id}
         })
       }
     }

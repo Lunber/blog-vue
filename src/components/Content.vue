@@ -1,43 +1,76 @@
+<style scoped>
+  .content{
+    display: none;
+    transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -moz-transition: all 0.5s; /* Firefox 4 */
+    -webkit-transition: all 0.5s; /* Safari 和 Chrome */
+    -o-transition: all 0.5s;
+  }
+  .show{
+    display: block;
+  }
+  .loading{
+    display:none;
+    transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -moz-transition: all 0.5s; /* Firefox 4 */
+    -webkit-transition: all 0.5s; /* Safari 和 Chrome */
+    -o-transition: all 0.5s;
+  }
+</style>
 <template>
-  <div>
-    <p @click="showInput()">
-      {{msg}}
-    </p>
-    <div v-html="post | marked"></div>
-    <div id="editor">
-      <textarea v-model="a" debounce="300"></textarea>
-      <div v-html="a | marked"></div>
-    </div>
-    <button type="button" @click="showInput()">click</button>
+  <div v-html="post | marked" class="content" :class="{'show':show}">
   </div>
+  <loading :class="{'loading':loading}"></loading>
 </template>
 <script>
   import marked from 'marked'
+  import loading from './loading.vue'
+  marked.setOptions({
+    highlight: function (code) {
+      return require('highlight.js').highlightAuto(code).value;
+    }
+  });
   export default {
-    data:function(){
-      return{
-        a: '# hello',
-        msg:'test',
-        title:'海贼王',
-        post:"# hello\n在HTML中，表单又`<form>`元素来表示。`<input>`可以通过设置size来指定文本框中显示的字符数。"
+    data: function () {
+      return {
+        title: '海贼王',
+        post: "#",
+        show:false,
+        loading:false
       }
     },
-    ready:function () {
-      console.log(marked('I am using __markdown__.'));
-      console.log(window.location)
+    components:{
+      loading
     },
     filters: {
       marked: marked
     },
     route: {
       activate: function (transition) {
-        this.$emit('title',this.title)
+        this.show = false
+        this.loading = false
+        this.$emit('title', this.title)
+        var data = {
+          id: this.$route.query.id
+        }
+        var _this = this
+        this.$http.post(this.$route.port + "/api/post", data).then(function (resp) {
+          setTimeout(function () {
+            console.log('resp:' + resp)
+            console.log(resp)
+            console.log(resp.data[0].content)
+            _this.post = resp.data[0].content
+            _this.show = true
+          _this.loading = true
+
+          } ,5000)
+          })
         transition.next()
-      }
-    },
-    methods:{
-      showInput:function () {
-        console.log(this.a)
+      },
+      deactivate:function (transition) {
+        transition.next()
       }
     }
   }
