@@ -25,7 +25,7 @@
   .piece{
     width: 1em;
     height: 1em;
-    background-color: #6396c4;
+    background-color: #788f6c;
     position: absolute;
   }
 

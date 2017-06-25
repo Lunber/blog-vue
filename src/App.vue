@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="container">
     <header>
       <div></div>
     </header>
@@ -44,9 +44,13 @@ body {
   clear: both;
 }
 
+#container{
+  height: 100%;
+}
+
 header {
   width: 100%;
-  height: 10vh;
+  height: 5vh;
   /*background: url("assets/headerbg.jpg") no-repeat;*/
   background-size: cover;
   transition: all 0.5s;
@@ -75,7 +79,7 @@ header div {
   left: 5vw;
   width: 10vw;
   text-align: center;
-  top: 10vh;
+  top: 7vh;
   transition: all 0.5s;
   -ms-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -156,6 +160,8 @@ nav a:hover {
   padding: 0 2em;
   border: 10px solid rgba(0, 0, 0, 0.3);
   background-clip: padding-box;
+  margin-bottom: 5vh;
+  min-height: calc(100% - 10vh);
 }
 
 .view {

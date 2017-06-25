@@ -1,6 +1,6 @@
 <template>
   <div class="blog">
-    <a v-for="blog in blogs" v-link="{}" @click="pageRouteGo($index)" data-id="{{blog.id}}">
+    <a v-for="blog in blogs" v-link="{}" @click="pageRouteGo($index)" :data-id="blog.id">
       <h1>{{blog.title}}</h1>
       <p>{{blog.createdDay}}</p>
       <div class="cb"></div>
@@ -48,7 +48,7 @@
     width: 100%;
     border-bottom: 1px solid #cccccc;
     text-decoration: none;
-    color: #ffffff;
+    color: #2c3f51;
   }
   .blog h1{
 
